@@ -8,7 +8,7 @@ new Vue({
 
     data: function(){
         return{
-            checked:false
+            checkedValues:[]
         }
     }
 })

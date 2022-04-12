@@ -9,8 +9,13 @@
     
     <div id="app">
       <p>{{text}}</p>
-      <input type="checkbox" v-model="checked" />
-      <div>{{checked}}</div>
+      <input type="checkbox" id="item1" value="001" v-model="checkedValues" />
+      <label for="item1">北海道</label>
+      <input type="checkbox" id="item2" value="002" v-model="checkedValues" />
+      <label for="item1">青森</label>
+      <input type="checkbox" id="item3" value="003" v-model="checkedValues" />
+      <label for="item1">岩手</label>
+      <div>チェックされた値：{{checkedValues}}</div>
     </div>
 
     
