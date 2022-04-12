@@ -8,7 +8,6 @@
 <body>
     
     <div id="app">
-      <p>{{text}}</p>
       <input type="checkbox" id="item1" value="001" v-model="checkedValues" />
       <label for="item1">北海道</label>
       <input type="checkbox" id="item2" value="002" v-model="checkedValues" />
@@ -18,7 +17,23 @@
       <div>チェックされた値：{{checkedValues}}</div>
     </div>
 
-    
+    <script>
+      $.ajax({
+          url: "https://opendata.resas-portal.go.jp/api/v1/prefectures",
+          type: "GET",
+          headers: {
+              'X-API-KEY': Y8xOC2OKoZE0pJ5DFbOmDhoGf04rs3fgtBADjh8a
+          },
+          async: "false",
+          success: function(result_data) {
+              for ( i = 0; i < result_data.result.length; i++ ) {
+                  document.getElementById("resas_data").innerHTML += result_data.result[i].prefName + "<br />";
+              }
+          }
+      });
+    </script>
+
+    <div id="resas_data"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
